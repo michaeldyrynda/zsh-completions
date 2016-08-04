@@ -1,0 +1,21 @@
+#compdef site
+
+if [[ -z "$SITES_BASEDIR" ]]; then
+    SITES_BASEDIR="$HOME/sites"
+fi
+
+function site()
+{
+    cd "$SITES_BASEDIR/${1}"
+}
+
+_site()
+{
+    compadd `_site_get_sites`
+}
+
+_site_get_sites() {
+    find "$SITES_BASEDIR" -type d -maxdepth 1 -mindepth 1 | sed "s:^$SITES_BASEDIR/::"
+}
+
+compdef _site site
