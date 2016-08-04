@@ -1,6 +1,6 @@
 #!zsh
 if [[ -z "$SITES_BASEDIR" ]]; then
-    SITES_BASEDIR="$HOME/sites"
+    SITES_BASEDIR="$HOME/Sites"
 fi
 
 function site()
